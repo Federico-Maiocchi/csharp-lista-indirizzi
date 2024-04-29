@@ -7,6 +7,7 @@ namespace csharp_lista_indirizzi
 {
     internal class Program
     {
+        // Funzione per leggere il file testo
         public static List<Address> ReadFromText(string path)
         {
             List<Address> addresses = new List<Address>();
@@ -37,8 +38,27 @@ namespace csharp_lista_indirizzi
                     string province = data[4];
                     int zip = int.Parse(data[5]);
 
-                    Address a = new Address(name, surname, street, city, province, zip);
-                    addresses.Add(a);
+                    //Nel caso in cui nel zip(cap) viene inserita una stringa al posto del numero
+                    if (!int.TryParse(data[5], out zip))
+                    {
+
+                        Console.WriteLine($"Il cap '{data[5]}' non è un numero valido.");
+                        continue;
+                    }
+
+                    //Se i nomi o i cognomi non sono presenti quindi stringa vuota
+                    if (string.IsNullOrWhiteSpace(name))
+                    {
+                        name = "nessun nome";
+                    }
+
+                    if (string.IsNullOrWhiteSpace(surname))
+                    {
+                        surname = "nessun cognome";
+                    }
+
+                    Address addressNew = new Address(name, surname, street, city, province, zip);
+                    addresses.Add(addressNew);
                 }
                 catch (Exception ex)
                 {
@@ -53,6 +73,7 @@ namespace csharp_lista_indirizzi
             return addresses;
         }
 
+        //Funzione che ricavo dalla mia lista di indirizzi e la scrivo in un file di testo
         public static void WriteInText(List<Address> addresses, string path)
         {
            StreamWriter stream = File.CreateText(path);
@@ -89,12 +110,10 @@ namespace csharp_lista_indirizzi
                 Console.WriteLine(" ");
             }
 
-
             //Bonus: iterare la lista di indirizzi e risalvarli in un file.
 
             string pathWrite = "C:\\Users\\Federico\\source\\repos\\csharp-lista-indirizzi\\csharp-lista-indirizzi\\addressesWrite.txt";
             WriteInText(addresses, pathWrite);
-
         }
     }
 }

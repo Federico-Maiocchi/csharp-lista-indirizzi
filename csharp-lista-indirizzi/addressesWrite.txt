@@ -1,5 +1,5 @@
-John Doe abita in via 120 jefferson st. nella città Riverside (NJ) cap: 8075
-Jack McGinnis abita in via 220 hobo Av. nella città Phila (PA) cap: 9119
-John Da Man Repici abita in via 120 Jefferson St. nella città Riverside (NJ) cap: 8075
-Stephen Tyler abita in via 7452 Terrace "At the Plaza" road nella città SomeTown (SD) cap: 91234
- Blankman abita in via  nella città New York ( NY) cap: 100101
+John Doe, via 120 jefferson st., città: Riverside (NJ), cap: 8075
+Jack McGinnis, via 220 hobo Av., città: Phila (PA), cap: 9119
+John Da Man Repici, via 120 Jefferson St., città: Riverside (NJ), cap: 8075
+Stephen Tyler, via 7452 Terrace "At the Plaza" road, città: SomeTown (SD), cap: 91234
+nessun nome Blankman, via , città: New York ( NY), cap: 100101
