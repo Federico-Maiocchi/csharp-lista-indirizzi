@@ -33,7 +33,7 @@ namespace csharp_lista_indirizzi
 
         public override string ToString()
         {
-            return $"l'utente {Name} {Surname} abita in via {Street} nella città {City} ({Province}) cap: {Zip}";
+            return $"{Name} {Surname} abita in via {Street} nella città {City} ({Province}) cap: {Zip}";
         }
     }
 }
